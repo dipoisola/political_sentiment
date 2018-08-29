@@ -1,0 +1,36 @@
+version: 2
+jobs:
+  build-creeper:
+    docker:
+      - image: ubuntu:14.04
+
+    working_directory: ~/political-sentiment/creeper/src
+
+    steps:
+      - checkout
+
+      - run:
+          command: echo "TODO"
+          
+  deploy-creeper:
+    docker:
+      - image: ubuntu:14.04
+    working_directory: ~/political-sentiment/creeper/src
+    steps:
+      - run:
+          name: Deploy if tests pass to AWS
+          command: echo "TODO"       
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build-creeper
+      - deploy-creeper:
+          requires:
+            - build-creeper
+          filters:
+            branches:
+              only: 
+                - master
+                - /lambda-*/
