@@ -1,4 +1,4 @@
-data "aws_iam_policy_document" "creeper_policy_document" {
+data "aws_iam_policy_document" "creeper-policy-document" {
   statement {
     sid = "1"
 
@@ -7,14 +7,14 @@ data "aws_iam_policy_document" "creeper_policy_document" {
     ]
 
     resources = [
-      "${aws_lambda_function.creeper_function.arn}",
+      "${aws_lambda_function.creeper-function.arn}",
     ]
   }
 }
 
 
 
-resource "aws_iam_role" "creeper_iam_role" {
-    name = "creeper_function_role"
-    assume_role_policy = "${creeper_policy_document}"
+resource "aws_iam_role" "creeper-iam-role" {
+    name = "creeper-function-role"
+    assume_role_policy = "${data.aws_iam_policy_document.creeper-policy-document}"
 }
