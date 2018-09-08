@@ -1,8 +1,8 @@
 resource "aws_cloudwatch_event_rule" "creeper-schedule-rule" {
     name        = "creeper-schedule"
-    description = "Run creeper bi-weekly"
+    description = "Run creeper bi-hourly"
 
-    schedule_expression = "rate (2 hours)"
+    schedule_expression = "cron(1/2 * * * ? *)"
 }
 
 resource "aws_cloudwatch_event_target" "creeper-schedule-target" {
