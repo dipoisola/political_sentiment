@@ -1,14 +1,13 @@
-data "aws_iam_policy_document" "creeper-policy-document" {
+data "aws_iam_policy_document" "creeper-policy" {
   statement {
     sid = "1"
 
-    actions = [
-      "lambda:InvokeFunction",
-    ]
+    actions = ["sts:AssumeRole"]
 
-    resources = [
-      "${aws_lambda_function.creeper-function.arn}",
-    ]
+    principals = {
+      type = "Service"
+      identifiers = ["lambda.amazonaws.com"]
+    }
   }
 }
 
@@ -16,5 +15,5 @@ data "aws_iam_policy_document" "creeper-policy-document" {
 
 resource "aws_iam_role" "creeper-iam-role" {
     name = "creeper-function-role"
-    assume_role_policy = "${data.aws_iam_policy_document.creeper-policy-document}"
+    assume_role_policy = "${data.aws_iam_policy_document.creeper-policy.json}"
 }
