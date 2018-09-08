@@ -1,2 +1,6 @@
 # Terraform working files. This will be synced to S3
 .terraform 
+*/terraform/*.zip
+
+.DS_Store
+.ipynb_checkpoints
