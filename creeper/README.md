@@ -1,7 +1,7 @@
 # Setup
 
 ## Infrastructure
-Creeper is a lambda function that runs on a 2 hour schedule to political party related tweets and dumps them in MongoDb database.
+Creeper is a lambda function that runs on a bi-hourly schedule to find political party related tweets and dump them in MongoDb database.
 
 The infrastructure is managed with Hashicorp's Terraform. You can find instructions to download that [in the project website](https://www.terraform.io/downloads.html).
 
