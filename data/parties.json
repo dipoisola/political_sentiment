@@ -1,0 +1,457 @@
+[
+    {
+        "name": "Accord",
+        "abbrev": "A",
+        "aliases": []
+    },
+    {
+        "name": "Action Alliance",
+        "abbrev": "AA",
+        "aliases": []
+    },
+    {
+        "name": "AFRICAN ACTION CONGRESS",
+        "abbrev": "AAC",
+        "aliases": []
+    },
+    {
+        "name": "ADVANCED ALLIED PARTY",
+        "abbrev": "AAP ",
+        "aliases": []
+    },
+    {
+        "name": "All Blending Party ",
+        "abbrev": "ABP",
+        "aliases": []
+    },
+    {
+        "name": "Advanced Congress Of Democrats",
+        "abbrev": "ACD",
+        "aliases": []
+    },
+    {
+        "name": "Allied Congress Party of Nigeria",
+        "abbrev": "ACPN",
+        "aliases": []
+    },
+    {
+        "name": "Alliance For Democracy",
+        "abbrev": "AD",
+        "aliases": []
+    },
+    {
+        "name": "African Democratic Congress",
+        "abbrev": "ADC",
+        "aliases": []
+    },
+    {
+        "name": "Action Democratic Party",
+        "abbrev": "ADP",
+        "aliases": []
+    },
+    {
+        "name": "All Grassroots Alliance",
+        "abbrev": "AGA",
+        "aliases": []
+    },
+    {
+        "name": "ALL GRAND ALLIANCE PARTY",
+        "abbrev": "AGAP",
+        "aliases": []
+    },
+    {
+        "name": "ADVANCED NIGERIA DEMOCRATIC PARTY",
+        "abbrev": "ANDP",
+        "aliases": []
+    },
+    {
+        "name": "Alliance for New Nigeria",
+        "abbrev": "ANN",
+        "aliases": []
+    },
+    {
+        "name": "ALLIANCE NATIONAL PARTY",
+        "abbrev": "ANP",
+        "aliases": []
+    },
+    {
+        "name": "Abundant Nigeria Renewal Party",
+        "abbrev": "ANRP",
+        "aliases": []
+    },
+    {
+        "name": "African Peoples Alliance",
+        "abbrev": "APA",
+        "aliases": []
+    },
+    {
+        "name": "ALL PROGRESSIVES CONGRESS",
+        "abbrev": "APC",
+        "aliases": []
+    },
+    {
+        "name": "Advanced Peoples Democratic Alliance ",
+        "abbrev": "APDA",
+        "aliases": []
+    },
+    {
+        "name": "All Progressives Grand Alliance",
+        "abbrev": "APGA",
+        "aliases": []
+    },
+    {
+        "name": "ALLIED PEOPLES MOVEMENT",
+        "abbrev": "APM",
+        "aliases": []
+    },
+    {
+        "name": "ALTERNATIVE PARTY OF NIGERIA",
+        "abbrev": "APN",
+        "aliases": []
+    },
+    {
+        "name": "ACTION PEOPLES PARTY",
+        "abbrev": "APP",
+        "aliases": []
+    },
+    {
+        "name": "ALLIANCE OF SOCIAL DEMOCRATS",
+        "abbrev": "ASD",
+        "aliases": []
+    },
+    {
+        "name": "ALLIANCE FOR A UNITED NIGERIA",
+        "abbrev": "AUN",
+        "aliases": []
+    },
+    {
+        "name": "BETTER NIGERIA PROGRESSIVE PARTY",
+        "abbrev": "BNPP",
+        "aliases": []
+    },
+    {
+        "name": "Coalition for Change",
+        "abbrev": "C4C",
+        "aliases": []
+    },
+    {
+        "name": "CHANGE NIGERIA PARTY",
+        "abbrev": "CNP",
+        "aliases": []
+    },
+    {
+        "name": "CONGRESS OF PATRIOTS",
+        "abbrev": "COP",
+        "aliases": []
+    },
+    {
+        "name": "DEMOCRATIC ALTERNATIVE",
+        "abbrev": "DA",
+        "aliases": []
+    },
+    {
+        "name": "Democratic Peoples Congress",
+        "abbrev": "DPC",
+        "aliases": []
+    },
+    {
+        "name": "Democratic Peoples Party",
+        "abbrev": "DPP",
+        "aliases": []
+    },
+    {
+        "name": "Freedom and Justice Party",
+        "abbrev": "FJP",
+        "aliases": []
+    },
+    {
+        "name": "FRESH DEMOCRATIC PARTY",
+        "abbrev": "FRESH",
+        "aliases": []
+    },
+    {
+        "name": "Grassroots Development Party of Nigeria",
+        "abbrev": "GDPN",
+        "aliases": []
+    },
+    {
+        "name": "Green Party of Nigeria",
+        "abbrev": "GPN",
+        "aliases": []
+    },
+    {
+        "name": "HOPE DEMOCRATIC PARTY",
+        "abbrev": "HDP",
+        "aliases": []
+    },
+    {
+        "name": "INDEPENDENT DEMOCRATS",
+        "abbrev": "ID",
+        "aliases": []
+    },
+    {
+        "name": "Justice Must Prevail Party",
+        "abbrev": "JMPP",
+        "aliases": []
+    },
+    {
+        "name": "Kowa Party",
+        "abbrev": "KP",
+        "aliases": []
+    },
+    {
+        "name": "LIBERATION MOVEMENT",
+        "abbrev": "LM",
+        "aliases": []
+    },
+    {
+        "name": "Labour Party",
+        "abbrev": "LP",
+        "aliases": []
+    },
+    {
+        "name": "Legacy Party of Nigeria",
+        "abbrev": "LPN",
+        "aliases": []
+    },
+    {
+        "name": "Mass Action Joint Alliance ",
+        "abbrev": "MAJA",
+        "aliases": []
+    },
+    {
+        "name": "Modern Democratic Party",
+        "abbrev": "MDP",
+        "aliases": []
+    },
+    {
+        "name": "MASSES MOVEMENT OF NIGERIA",
+        "abbrev": "MMN",
+        "aliases": []
+    },
+    {
+        "name": "MEGA PARTY OF NIGERIA ",
+        "abbrev": "MPN",
+        "aliases": []
+    },
+    {
+        "name": "MOVEMENT FOR THE RESTORATION AND DEFENCE OF DEMOCRACY",
+        "abbrev": "MRDD",
+        "aliases": []
+    },
+    {
+        "name": "NATIONAL ACTION COUNCIL",
+        "abbrev": "NAC",
+        "aliases": []
+    },
+    {
+        "name": "NIGERIA COMMUNITY MOVEMENT PARTY",
+        "abbrev": "NCMP",
+        "aliases": []
+    },
+    {
+        "name": "National Conscience Party",
+        "abbrev": "NCP",
+        "aliases": []
+    },
+    {
+        "name": "Nigeria Democratic Congress Party",
+        "abbrev": "NDCP",
+        "aliases": []
+    },
+    {
+        "name": "NATIONAL DEMOCRATIC LIBERTY PARTY",
+        "abbrev": "NDLP",
+        "aliases": []
+    },
+    {
+        "name": "NIGERIA ELEMENTS PROGRESSIVE PARTY",
+        "abbrev": "NEPP",
+        "aliases": []
+    },
+    {
+        "name": "NIGERIA FOR DEMOCRACY",
+        "abbrev": "NFD",
+        "aliases": []
+    },
+    {
+        "name": "New Generation Party of Nigeria ",
+        "abbrev": "NGP",
+        "aliases": []
+    },
+    {
+        "name": "National Interest Party",
+        "abbrev": "NIP",
+        "aliases": []
+    },
+    {
+        "name": "New Nigeria Peoples Party",
+        "abbrev": "NNPP",
+        "aliases": []
+    },
+    {
+        "name": "NIGERIA PEOPLES CONGRESS",
+        "abbrev": "NPC",
+        "aliases": []
+    },
+    {
+        "name": "New Progressive Movement",
+        "abbrev": "NPM",
+        "aliases": []
+    },
+    {
+        "name": "National Rescue Movement",
+        "abbrev": "NRM",
+        "aliases": []
+    },
+    {
+        "name": "NATIONAL UNITY PARTY",
+        "abbrev": "NUP",
+        "aliases": []
+    },
+    {
+        "name": "People\u2019s Alliance for National Development & Liberty",
+        "abbrev": "PANDEL",
+        "aliases": []
+    },
+    {
+        "name": "PEOPLES COALITION PARTY",
+        "abbrev": "PCP",
+        "aliases": []
+    },
+    {
+        "name": "People For Democratic Change",
+        "abbrev": "PDC",
+        "aliases": []
+    },
+    {
+        "name": "Peoples Democratic Movement ",
+        "abbrev": "PDM",
+        "aliases": []
+    },
+    {
+        "name": "Peoples Democratic Party",
+        "abbrev": "PDP",
+        "aliases": []
+    },
+    {
+        "name": "Progressive Peoples Alliance",
+        "abbrev": "PPA",
+        "aliases": []
+    },
+    {
+        "name": "Providence People\u2019s Congress",
+        "abbrev": "PPC",
+        "aliases": []
+    },
+    {
+        "name": "Peoples Party of Nigeria",
+        "abbrev": "PPN",
+        "aliases": []
+    },
+    {
+        "name": "PEOPLES PROGRESSIVE PARTY",
+        "abbrev": "PPP",
+        "aliases": []
+    },
+    {
+        "name": "PEOPLES REDEMPTION PARTY",
+        "abbrev": "PRP",
+        "aliases": []
+    },
+    {
+        "name": "People\u2019s Trust",
+        "abbrev": "PT",
+        "aliases": []
+    },
+    {
+        "name": "REFORM AND ADVANCEMENT PARTY",
+        "abbrev": "RAP",
+        "aliases": []
+    },
+    {
+        "name": "Re-build Nigeria Party",
+        "abbrev": "RBNP",
+        "aliases": []
+    },
+    {
+        "name": "Restoration Party of Nigeria",
+        "abbrev": "RP",
+        "aliases": []
+    },
+    {
+        "name": "SAVE NIGERIA CONGRESS",
+        "abbrev": "S.N.C",
+        "aliases": []
+    },
+    {
+        "name": "Social Democratic Party",
+        "abbrev": "SDP",
+        "aliases": []
+    },
+    {
+        "name": "Sustainable National Party",
+        "abbrev": "SNP",
+        "aliases": []
+    },
+    {
+        "name": "Socialist Party of Nigeria",
+        "abbrev": "SPN",
+        "aliases": []
+    },
+    {
+        "name": "UNITED PEOPLES CONGRESS",
+        "abbrev": "U.P.C",
+        "aliases": []
+    },
+    {
+        "name": "United Democratic Party",
+        "abbrev": "UDP",
+        "aliases": []
+    },
+    {
+        "name": "UNITED PATRIOTS",
+        "abbrev": "UP",
+        "aliases": []
+    },
+    {
+        "name": "Unity Party of Nigeria",
+        "abbrev": "UPN",
+        "aliases": []
+    },
+    {
+        "name": "United Progressive Party",
+        "abbrev": "UPP",
+        "aliases": []
+    },
+    {
+        "name": "WE THE PEOPLE NIGERIA",
+        "abbrev": "WTPN",
+        "aliases": []
+    },
+    {
+        "name": "YOUNG DEMOCRATIC PARTY",
+        "abbrev": "YDP",
+        "aliases": []
+    },
+    {
+        "name": "YES ELECTORATES SOLIDARITY",
+        "abbrev": "YES",
+        "aliases": []
+    },
+    {
+        "name": "YOUTH PARTY",
+        "abbrev": "YP",
+        "aliases": []
+    },
+    {
+        "name": "Young Progressive Party",
+        "abbrev": "YPP",
+        "aliases": []
+    },
+    {
+        "name": "ZENITH LABOUR PARTY",
+        "abbrev": "ZLP",
+        "aliases": []
+    }
+]
