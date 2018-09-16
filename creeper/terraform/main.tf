@@ -12,4 +12,10 @@ resource "aws_lambda_function" "creeper-function" {
   handler          = "creeper.Main::fetchTweets"
   source_code_hash = "${data.archive_file.creeper-zip.output_base64sha256}"
   runtime          = "java8"
+
+  environment {
+    variables = {
+      DB_URI = "${data.terraform_remote_state.config.db-uri}"
+    }
+  }
 }
