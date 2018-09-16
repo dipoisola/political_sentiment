@@ -2,7 +2,7 @@ version: 2
 jobs:
   build-creeper:
     docker:
-      - image: ubuntu:14.04
+      - image: oluwafemisule/scala
 
     working_directory: ~/political-sentiment/creeper/src
 
@@ -10,16 +10,19 @@ jobs:
       - checkout
 
       - run:
-          command: echo "TODO"
-          
+          name: "Run tests"
+          command: sbt test
+      - run:
+          name: "Build jar"
+          command: "sbt assembly"
   deploy-creeper:
     docker:
-      - image: ubuntu:14.04
+      - image: oluwafemisule/scala
     working_directory: ~/political-sentiment/creeper/src
     steps:
       - run:
           name: Deploy if tests pass to AWS
-          command: echo "TODO"       
+          command: echo "TODO"
 
 workflows:
   version: 2
