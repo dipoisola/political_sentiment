@@ -2,13 +2,12 @@ version: 2
 jobs:
   build-creeper:
     docker:
-      - image: oluwafemisule/scala
+      - image: oluwafemisule/scala:2.12.6
 
     working_directory: ~/political-sentiment/creeper/src
 
     steps:
       - checkout
-
       - run:
           name: "Run tests"
           command: sbt test
@@ -17,12 +16,16 @@ jobs:
           command: "sbt assembly"
   deploy-creeper:
     docker:
-      - image: oluwafemisule/scala
+      - image: oluwafemisule/scala:2.12.6
     working_directory: ~/political-sentiment/creeper/src
     steps:
+      - run: 
+          name: Install AWS CLI
+          command: apt install python3-pip \ &&
+            pip3 install awscli
       - run:
-          name: Deploy if tests pass to AWS
-          command: echo "TODO"
+          name: Deploy to AWS
+          command: ./bin/upload-to-aws
 
 workflows:
   version: 2
