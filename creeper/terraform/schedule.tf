@@ -3,7 +3,7 @@ resource "aws_cloudwatch_event_rule" "creeper-schedule-rule" {
   description = "Run creeper bi-hourly"
 
   # https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions
-  schedule_expression = "cron(* 1/2 * * ? *)"
+  schedule_expression = "cron(0 1/2 * * ? *)"
 }
 
 resource "aws_cloudwatch_event_target" "creeper-schedule-target" {
