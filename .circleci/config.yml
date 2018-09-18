@@ -4,20 +4,20 @@ jobs:
     docker:
       - image: oluwafemisule/scala:2.12.6
 
-    working_directory: ~/political-sentiment/creeper/src
+    working_directory: ~/political-sentiment
 
     steps:
-      - checkout
+      - checkout 
       - run:
           name: "Run tests"
-          command: sbt test
+          command: cd creeper && sbt test
       - run:
           name: "Build jar"
-          command: "sbt assembly"
+          command: cd creeper && sbt assembly
   deploy-creeper:
     docker:
       - image: oluwafemisule/scala:2.12.6
-    working_directory: ~/political-sentiment/creeper/src
+    working_directory: ~/political-sentiment/creeper
     steps:
       - run: 
           name: Install AWS CLI
