@@ -1,5 +1,15 @@
 #!/bin/bash
+function_name=$1
+function_source=$2
+
+if [ -z $1 ] || [ -z $2 ];
+then 
+    printf "Error: Function name or Archive Path was not set \n\n"
+    printf "Usage: upload-function <function_name> <function_archive_path> \n"
+exit
+fi
+
 aws lambda update-function-code \
---function-name creeper \
---zip-file fileb://../target/scala-2.12/creeper.jar \
+--function-name $1 \
+--zip-file "fileb://$2" \
 --publish true
