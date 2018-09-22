@@ -2,15 +2,14 @@ variable "db-uri" {
   default = ""
 }
 
-
 output "db-uri" {
-  value = "${ local.created == 1 ? data.aws_ssm_parameter.db.value : var.db-uri }"
+  value = "${aws_ssm_parameter.db.value}"
 }
 
 terraform {
   backend "s3" {
     bucket = "strongbank"
-    region  = "us-east-1"
+    region = "us-east-1"
     key    = "terraform/creeper-db.state"
   }
 }
@@ -18,13 +17,10 @@ terraform {
 data "aws_ssm_parameter" "db" {
   name = "db-uri"
 }
+
 resource "aws_ssm_parameter" "db" {
-  count = "${ local.created  == 1 ? 0 : 1}"
   name  = "db-uri"
   type  = "SecureString"
-  value = "${var.db-uri}"
-}
-
-locals {
-  created = "${length(data.aws_ssm_parameter.db.value) > 0}"
+  value = "${coalesce(var.db-uri, data.aws_ssm_parameter.db.value)}"
+  overwrite = true
 }
