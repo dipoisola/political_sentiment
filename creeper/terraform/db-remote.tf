@@ -1,10 +1,8 @@
-data "terraform_remote_state" "config" {
-  backend = "s3"
+variable "db-uri" {
+  default = ""
+}
 
-  config {
-    bucket = "strongbank"
-    region = "us-east-1"
-    key    = "terraform/creeper-db.state"
-    region = "us-east-1"
-  }
+module "db" {
+  source = "./db"
+  db-uri = "${var.db-uri}"
 }

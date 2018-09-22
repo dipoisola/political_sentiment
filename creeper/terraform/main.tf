@@ -15,7 +15,7 @@ resource "aws_lambda_function" "creeper-function" {
 
   environment {
     variables = {
-      DB_URI = "${data.terraform_remote_state.config.db-uri}"
+      DB_URI = "${module.db.db-uri}"
     }
   }
 }

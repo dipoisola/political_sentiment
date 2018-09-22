@@ -4,7 +4,7 @@ variable "db-uri" {
 
 
 output "db-uri" {
-  value = "${var.db-uri}"
+  value = "${ local.created == 1 ? data.aws_ssm_parameter.db.value : var.db-uri }"
 }
 
 terraform {
@@ -15,21 +15,16 @@ terraform {
   }
 }
 
+data "aws_ssm_parameter" "db" {
+  name = "db-uri"
+}
 resource "aws_ssm_parameter" "db" {
+  count = "${ local.created  == 1 ? 0 : 1}"
   name  = "db-uri"
   type  = "SecureString"
   value = "${var.db-uri}"
 }
 
-
-variable shared_role_arn {
-  type = "string"
-}
-
-provider "aws" {
-  region = "us-east-1"
-
-  assume_role {
-    role_arn     = "${var.shared_role_arn}"
-  }
+locals {
+  created = "${length(data.aws_ssm_parameter.db.value) > 0}"
 }
