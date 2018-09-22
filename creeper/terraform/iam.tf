@@ -16,7 +16,7 @@ resource "aws_iam_role" "creeper-iam-role" {
   assume_role_policy = "${data.aws_iam_policy_document.creeper-policy.json}"
 }
 
-data "aws_iam_policy_document" "circle-ci-policy-doc" {
+data "aws_iam_policy_document" "ci-policy-doc" {
   statement {
     actions = [
       "lambda:UpdateFunctionCode",
@@ -28,17 +28,16 @@ data "aws_iam_policy_document" "circle-ci-policy-doc" {
   }
 }
 
-variable "circle-ci" {
+variable "ci-user" {
   default = "circle-ci"
 }
 
-resource "aws_iam_policy" "circle-ci-policy" {
-  name        = "Circle-CI-policy"
-  description = "Circle CI updates Lambda source code"
-  policy      = "${data.aws_iam_policy_document.circle-ci-policy-doc.json}"
+resource "aws_iam_policy" "ci-policy" {
+  name        = "${var.ci-user}-policy"
+  policy      = "${data.aws_iam_policy_document.ci-policy-doc.json}"
 }
 
-resource "aws_iam_user_policy_attachment" "circle-ci-policy-attachment" {
-  user       = "${var.circle-ci}"
-  policy_arn = "${aws_iam_policy.circle-ci-policy.arn}"
+resource "aws_iam_user_policy_attachment" "ci-policy-attachment" {
+  user       = "${var.ci-user}"
+  policy_arn = "${aws_iam_policy.ci-policy.arn}"
 }
