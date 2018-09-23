@@ -7,7 +7,7 @@ jobs:
     working_directory: ~/political-sentiment
 
     steps:
-      - checkout 
+      - checkout
       - run:
           name: "Run tests"
           command: cd creeper && sbt test
@@ -17,15 +17,17 @@ jobs:
   deploy-creeper:
     docker:
       - image: oluwafemisule/scala:2.12.6
-    working_directory: ~/political-sentiment/creeper
+    working_directory: ~/political-sentiment
     steps:
       - run: 
+          name: Update package source list
+          command: echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" > /etc/apt/sources.list
+      - run: 
           name: Install AWS CLI
-          command: apt install python3-pip \ &&
-            pip3 install awscli
+          command: apt-get update && apt-get install -y python3-pip && pip3 install awscli
       - run:
           name: Deploy to AWS
-          command: ./bin/upload-to-aws
+          command: ./bin/upload-function creeper creeper/target/scala-2.12/creeper.jar
 
 workflows:
   version: 2

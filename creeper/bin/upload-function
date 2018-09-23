@@ -1,5 +1,0 @@
-#!/bin/bash
-aws lambda update-function-code \
---function-name creeper \
---zip-file fileb://../target/scala-2.12/creeper.jar \
---publish true
