@@ -1,17 +1,9 @@
 variable "db-uri" {
-  default = ""
+  type = "string"
 }
 
-output "db-uri" {
-  value = "${aws_ssm_parameter.db.value}"
-}
-
-terraform {
-  backend "s3" {
-    bucket = "strongbank"
-    region = "us-east-1"
-    key    = "terraform/creeper-db.state"
-  }
+locals {
+  db_uri = "${coalesce(var.db-uri, data.aws_ssm_parameter.db.value)}"
 }
 
 data "aws_ssm_parameter" "db" {
@@ -21,6 +13,11 @@ data "aws_ssm_parameter" "db" {
 resource "aws_ssm_parameter" "db" {
   name  = "db-uri"
   type  = "SecureString"
-  value = "${coalesce(var.db-uri, data.aws_ssm_parameter.db.value)}"
+  value = "${local.db_uri}"
   overwrite = true
+}
+
+
+output "db-uri" {
+  value = "${local.db_uri}"
 }
