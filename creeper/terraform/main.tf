@@ -1,8 +1,8 @@
 data "archive_file" "creeper-zip" {
-  type        = "zip"
+  type                    = "zip"
   source_content          = "# nothing to do"
   source_content_filename = "creeper.Main::fetchTweets"
-  output_path = "${path.module}/creeper.zip"
+  output_path             = "${path.module}/creeper.zip"
 }
 
 resource "aws_lambda_function" "creeper-function" {
@@ -15,7 +15,8 @@ resource "aws_lambda_function" "creeper-function" {
 
   environment {
     variables = {
-      DB_URI = "${data.terraform_remote_state.config.db-uri}"
+      DB_URI = "${module.db.db-uri}"
+      BUCKET = "${module.bkt.name}"
     }
   }
 }
