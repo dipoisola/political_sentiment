@@ -15,9 +15,18 @@ jobs:
       - run:
           name: "Build jar"
           command: cd creeper && sbt assembly
+      - persist_to_workspace:
+      # https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs
+      # https://circleci.com/docs/2.0/configuration-reference/#persist_to_workspace
+          root: ./
+          paths:
+            - bin
+            - creeper/target/**/*
   deploy-creeper:
     <<: *creeper-defaults
     steps:
+      - attach_workspace:
+          at: ./
       - run: 
           name: Update package source list
           command: echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" > /etc/apt/sources.list
