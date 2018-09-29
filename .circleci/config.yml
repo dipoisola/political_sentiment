@@ -11,17 +11,21 @@ jobs:
       - checkout
       - run:
           name: "Run tests"
-          command: cd creeper && sbt test
+          command: |
+            cd creeper
+            sbt test
       - run:
           name: "Build jar"
-          command: cd creeper && sbt assembly
+          command: |
+            cd creeper
+            sbt assembly
       - persist_to_workspace:
       # https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs
       # https://circleci.com/docs/2.0/configuration-reference/#persist_to_workspace
           root: ./
           paths:
             - bin
-            - creeper/target/**/*
+            - creeper/target/scala-2.12/*
   deploy-creeper:
     <<: *creeper-defaults
     steps:
@@ -32,7 +36,10 @@ jobs:
           command: echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" > /etc/apt/sources.list
       - run: 
           name: Install AWS CLI
-          command: apt-get update && apt-get install -y python3-pip && pip3 install awscli
+          command: |
+            apt-get update
+            apt-get install -y python3-pip
+            pip3 install awscli
       - run:
           name: Deploy to AWS
           command: ./bin/upload-function creeper creeper/target/scala-2.12/creeper.jar
@@ -49,4 +56,4 @@ workflows:
             branches:
               only: 
                 - master
-                - /lambda-*/
+                - /^lambda-.*/
