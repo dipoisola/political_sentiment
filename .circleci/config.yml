@@ -1,11 +1,12 @@
+creeper-defaults: &creeper-defaults
+  working_directory: ~/political-sentiment
+  docker:
+    - image: oluwafemisule/scala:2.12.6
+
 version: 2
 jobs:
   build-creeper:
-    docker:
-      - image: oluwafemisule/scala:2.12.6
-
-    working_directory: ~/political-sentiment
-
+    <<: *creeper-defaults
     steps:
       - checkout
       - run:
@@ -15,9 +16,7 @@ jobs:
           name: "Build jar"
           command: cd creeper && sbt assembly
   deploy-creeper:
-    docker:
-      - image: oluwafemisule/scala:2.12.6
-    working_directory: ~/political-sentiment
+    <<: *creeper-defaults
     steps:
       - run: 
           name: Update package source list
