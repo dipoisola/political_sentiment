@@ -42,6 +42,8 @@ jobs:
             pip3 install awscli
       - run:
           name: Deploy to AWS
+          environment:
+            AWS_DEFAULT_REGION: us-east-1
           command: ./bin/upload-function creeper creeper/target/scala-2.12/creeper.jar
 
 workflows:
