@@ -11,7 +11,8 @@ fi
 
 printf "Uploading $function_archive_path to $function_name in AWS Lambda \n\n"
 
+
 aws lambda update-function-code \
 --function-name $function_name \
 --zip-file "fileb://$function_archive_path" \
---publish true
+--publish
