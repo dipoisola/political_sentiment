@@ -17,6 +17,11 @@ resource "aws_lambda_function" "creeper-function" {
     variables = {
       DB_URI = "${module.db.db-uri}"
       BUCKET = "${module.bkt.name}"
+# Twitter OAUTH credentials
+      TOKEN = "${module.token_param.value}"
+      TOKEN_SECRET = "${module.token-secret_param.value}"
+      CONSUMER_KEY = "${module.consumer-key_param.value}"
+      CONSUMER_SECRET = "${module.consumer-secret_param.value}"
     }
   }
 }
