@@ -33,7 +33,7 @@ variable "ci-user" {
 }
 
 resource "aws_iam_policy" "ci-policy" {
-  name        = "${var.ci-user}-policy"
+  name        = "update-creeper-code-policy"
   policy      = "${data.aws_iam_policy_document.ci-policy-doc.json}"
 }
 
