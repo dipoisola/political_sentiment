@@ -3,27 +3,20 @@ package creeper
 import java.net.URLEncoder
 
 object TwitterSearch {
-  def queryAtCharLimits(parties: List[Party]): List[String] = {
-    val search = parties.flatMap(
-      p => List(
-        s""""${p.name.trim.toLowerCase}"""", p.aliases.fold ("")(_ ++ _)
+  def queries(parties: List[Party]): List[String] = {
+    val operator = "%20OR%20"
+
+    val words = parties.map(
+      p => List(p.name.trim.toLowerCase) ::: p.aliases.map(_.toLowerCase)
+    )
+    
+    val nonEmptyWords = words
+        .filter(s => s != "")
+    
+    return nonEmptyWords.map( 
+      s => URLEncoder.encode(
+        s.mkString(operator), "UTF-8"
       )
     )
-    val nonEmptySearch = search
-        .filter(s => s != "")
-
-    var queries = List[String]()
-    val sb = new StringBuilder
-    val op = "%20OR%20"
-    for (s <- nonEmptySearch) {
-      sb ++= URLEncoder.encode(s, "UTF-8")
-      sb ++= op
-      if(sb.lengthCompare(490) > 0) {
-          queries :+= sb.stripSuffix(op).mkString
-          sb.clear()
-      }
-    }
-    queries :+= sb.stripSuffix(op).mkString
-    return queries
   }
 }

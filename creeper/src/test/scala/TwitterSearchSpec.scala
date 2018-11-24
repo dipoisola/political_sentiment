@@ -4,36 +4,34 @@ import creeper.{TwitterSearch, Party}
 
 
 class TwitterSearchSpec extends FunSuite with DiagrammedAssertions {
-  test("TwitterSearch can make query at char limits") {
+  test("TwitterSearch can generate search query for party") {
     val parties = List[Party](
       Party("3 Legs", "3LEGS", List[String]()),
       Party("4 Legs", "4LEGS", List[String]())
     )
+    val queries = TwitterSearch.queries(parties)
 
-    assert(
-      TwitterSearch
-        .queryAtCharLimits(parties)
-        .exists(_ == "%223+legs%22%20OR%20%224+legs%22")
-    )
+    assert(queries.exists(_ == "3+legs"))
   }
 
-  test("TwitterSearch can make queries when above char limits") {
-    val parties = List[Party](
-      Party("3 Legs", "3LEGS", List[String](
+  test("TwitterSearch can generate query for party with alias") {
+    val party1Alias = List[String](
         "If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you?",
         "I love eating toasted cheese and tuna sandwiches.",
+        "Sixty-Four comes asking for bread.",
+     )
+    val party2Alias = List[String](
         "Last Friday in three week’s time I saw a spotted striped blue worm shake hands with a legless lizard.",
         "She folded her handkerchief neatly.",
-        "Sixty-Four comes asking for bread.",
-        "Sometimes it is better to just walk away from things and go back to them later when you’re in a better frame of mind.",
-        "The memory we used to share is no longer coherent."
-      )),
-      Party("4 Legs", "4LEGS", List[String]())
+      )
+    val parties = List[Party](
+      Party("3 Legs", "3LEGS", party1Alias),
+      Party("4 Legs", "4LEGS", party2Alias)
     )
+    val queries = TwitterSearch.queries(parties)
+
     assert(
-      TwitterSearch
-        .queryAtCharLimits(parties)
-        .length == 2
+      queries.last.endsWith("she+folded+her+handkerchief+neatly.")
     )
   }
 
