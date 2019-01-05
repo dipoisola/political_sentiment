@@ -4,6 +4,7 @@ ThisBuild / organization := "com.creeper"
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8", "-Xlint")
 
 resolvers += Resolver.typesafeRepo("releases")
+resolvers += Resolver.sonatypeRepo("public")
 
 scalacOptions ++= Seq(
   "-deprecation",
@@ -32,6 +33,7 @@ lazy val creeper = (project in file("."))
       "com.amazonaws" % "aws-lambda-java-core" % "1.2.0",
       "com.amazonaws" % "aws-lambda-java-events" % "2.2.2",
       "com.typesafe.play" %% "play-json" % "2.6.0",
+      "com.squareup.okhttp3" % "okhttp" % "3.12.1"
     ),
     assemblyJarName in assembly := "creeper.jar"
   )
